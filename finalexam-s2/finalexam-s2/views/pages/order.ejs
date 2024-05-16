@@ -1,0 +1,52 @@
+<head>
+    <title>New Order</title>
+    <%- include('../shared/head') %>
+</head>
+<body>
+    <div class="container">
+        <h1>New Order</h1>
+
+        <p><a class="link-primary" href="/login">Login</a></p>       
+        <p><a class="link-primary" href="/orders">All Orders</a></p>
+
+        <% if (typeof errors !== "undefined") { errors.forEach(error => { %>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <span><%= error.msg %></span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <% }) } %>
+
+        <!-- Form -->
+        <form method="post" action="/">
+            <div class="mb-3">
+                <label class="form-label" for="UserName">Name</label>
+                <input class="form-control" name="UserName" type="text">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="PhoneNo">Phone Number</label>
+                <input class="form-control" name="PhoneNo" type="text">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="MangoJuices">Mango Juices</label>
+                <input class="form-control" name="MangoJuices" type="text">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="BerryJuices">Berry Juices</label>
+                <input class="form-control" name="BerryJuices" type="text">
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="AppleJuices">Apple Juices</label>
+                <input class="form-control" name="AppleJuices" type="text">
+
+            </div>
+            <input class="btn btn-primary" type="submit" value="Submit">
+        </form>
+        
+        <%- include('../shared/footer') %>
+    </div>
+    <%- include('../shared/scripts') %>
+</body>
